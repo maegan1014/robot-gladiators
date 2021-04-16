@@ -5,10 +5,15 @@ var playerMoney = 10;
 
 // You can also log multiple values at once like this
 console.log(playerName, playerAttack, playerHealth);
-
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
+
+console.log(enemyNames);
+console.log(enemyNames.length);
+console.log(enemyNames[0]);
+console.log(enemyNames[3]);
+
 
 var fight = function()
  {
@@ -23,7 +28,7 @@ var fight = function()
 
 };
 
-fight()
+//fight()
 var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
  // if player choses to fight, then fight
 if (promptFight === "fight" || promptFight === "FIGHT") {
@@ -57,14 +62,25 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
    // confirm player wants to skip
    var confirmSkip = window.confirm("Are you sure you'd like to quit?");
 }
-   if (confirmSkip) {
+
+  // if yes (true), leave fight
+  var confirmSkip = true;
+
+   if (confirmSkip === true) {
      window.alert(playerName + " has decided to skip this fight. Goodbye!");
+     // do something
+
      // subtract money from playerMoney for skipping
      playerMoney = playerMoney - 2;
    }
+
+   if (confirmSkip) {
+     // do something
+   }
    // if no (false), ask question again by running fight() again
    else {
-     fight();
+     //fight();
    }
- }
+  
+ 
 
